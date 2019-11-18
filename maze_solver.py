@@ -36,7 +36,6 @@ def solve_maze(maze, start_pos, end_pos):
             if r - 1 > -1 and (maze[r - 1][c] == con.EMPTY or maze[r - 1][c] == con.DESTINATION):
                 next_cell = [c, r - 1, current_level + 1]
                 queue_maze.put(next_cell)
-
     if flag:
         print('Shortest Path Found!', 'Steps:', no_of_steps)
     else:
