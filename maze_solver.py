@@ -18,7 +18,7 @@ def solve_maze(maze, start_pos, end_pos):
         r = cell[1]
         c = cell[0]
         current_level = cell[2]
-        print(current_level)
+        # print(current_level)
         count1 += 1
         maze[r][c] = str(current_level)
         if r == end_pos[1] and c == end_pos[0]:
@@ -38,11 +38,11 @@ def solve_maze(maze, start_pos, end_pos):
             if r - 1 > -1 and (maze[r - 1][c] == con.EMPTY or maze[r - 1][c] == con.DESTINATION):
                 next_cell = [c, r - 1, current_level + 1]
                 queue_maze.put(next_cell)
-    if flag:
-        print('Shortest Path Found!', 'Steps:', no_of_steps)
-    else:
-        print('No path found!')
-
+    # if flag:
+    # print('Shortest Path Found!', 'Steps:', no_of_steps)
+    # else:
+    # print('No path found!')
+    queue_maze.task_done()
     path = ''
     current_cell = [end_pos[1], end_pos[0]]
     for i in range(no_of_steps, 0, -1):

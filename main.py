@@ -25,10 +25,12 @@ print(response)
 
 # Get race puzzle
 puz = maze_api.post_start_race('Grandolf49')
+
 while True:
-    print('New Puzzle')
+    # print('New Puzzle')
     next_maze = puz[con.STR_NEXT_MAZE]
     maze_data_json = maze_api.get_maze_race_mode(next_maze)
+    # print(maze_data_json)
 
     maze = maze_data_json[con.STR_MAP]
     maze_path = maze_data_json[con.STR_MAZE_PATH]
@@ -36,10 +38,12 @@ while True:
     end_pos = maze_data_json[con.STR_END_POS]
 
     # Get solution to the maze
-    print('Getting Solution')
+    # print('Getting Solution')
     answer = solve.solve_maze(maze, start_pos, end_pos)
 
     # Post this solution to API
-    print('Sending Solution')
+    # print('Sending Solution')
     puz = maze_api.post_result_directions(answer, maze_path)
-    print(puz)
+    if puz[con.STR_RESULT] == con.STR_FINISHED:
+        print(puz[con.STR_MESSAGE])
+        break
