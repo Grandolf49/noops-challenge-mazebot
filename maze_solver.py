@@ -8,16 +8,18 @@ def solve_maze(maze, start_pos, end_pos):
     count = 0
     no_of_steps = 0
     maze_len = len(maze)
-    queue_maze = queue.Queue(maze_len ** 2)
+    queue_maze = queue.Queue(maze_len ** 5)
     first_cell = [start_pos[0], start_pos[1], count]
     queue_maze.put(first_cell)
     flag = 0
-
+    count1 = 0
     while not queue_maze.empty():
         cell = queue_maze.get()
         r = cell[1]
         c = cell[0]
         current_level = cell[2]
+        print(current_level)
+        count1 += 1
         maze[r][c] = str(current_level)
         if r == end_pos[1] and c == end_pos[0]:
             flag = 1
