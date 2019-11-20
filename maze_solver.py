@@ -7,9 +7,9 @@ VISITED = 1
 NOT_VISITED = 0
 
 
+# BFS Implementation
 def solve_maze_bfs(maze, start_pos, end_pos):
     # Finding the number of steps
-
     count = 0
     no_of_steps = 0
     maze_len = len(maze)
@@ -112,9 +112,11 @@ def get_path(parent, source, destination, size):
 
         current_pos[0] = next_pos[0]
         current_pos[1] = next_pos[1]
+
     return path_dir
 
 
+# Dijkstraj's Algorithm Implementation
 def solve_maze_dijkstraj(maze, start_pos, end_pos):
     size = len(maze)
     no_of_nodes = size ** 2

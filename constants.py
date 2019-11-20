@@ -1,6 +1,6 @@
 # Constants
-MAZE_MIN_SIZE = 10
-MAZE_MAX_SIZE = 10
+MAZE_MIN_SIZE = 20
+MAZE_MAX_SIZE = 20
 PUZZLE_BASE_URL = 'https://api.noopschallenge.com'
 PUZZLE_RANDOM_PATH = '/mazebot/random'
 PUZZLE_RACE_PATH = '/mazebot/race/start'
